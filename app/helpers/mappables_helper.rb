@@ -1,0 +1,2 @@
+module MappablesHelper
+end

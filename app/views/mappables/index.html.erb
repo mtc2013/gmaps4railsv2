@@ -1,0 +1,27 @@
+<h1>Listing mappables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mappables.each do |mappable| %>
+      <tr>
+        <td><%= mappable.address %></td>
+        <td><%= link_to 'Show', mappable %></td>
+        <td><%= link_to 'Edit', edit_mappable_path(mappable) %></td>
+        <td><%= link_to 'Destroy', mappable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mappable', new_mappable_path %>
