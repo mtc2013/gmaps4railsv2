@@ -18,7 +18,7 @@ class MappablesControllerTest < ActionController::TestCase
 
   test "should create mappable" do
     assert_difference('Mappable.count') do
-      post :create, mappable: { address: @mappable.address }
+      post :create, mappable: { address: @mappable.address, latitude: @mappable.latitude, longitude: @mappable.longitude }
     end
 
     assert_redirected_to mappable_path(assigns(:mappable))
@@ -35,7 +35,7 @@ class MappablesControllerTest < ActionController::TestCase
   end
 
   test "should update mappable" do
-    patch :update, id: @mappable, mappable: { address: @mappable.address }
+    patch :update, id: @mappable, mappable: { address: @mappable.address, latitude: @mappable.latitude, longitude: @mappable.longitude }
     assert_redirected_to mappable_path(assigns(:mappable))
   end
 

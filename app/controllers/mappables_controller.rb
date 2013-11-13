@@ -5,6 +5,11 @@ class MappablesController < ApplicationController
   # GET /mappables.json
   def index
     @mappables = Mappable.all
+    @hash = Gmaps4rails.build_markers(@mappables) do |mappable, marker|
+      marker.lat mappable.latitude
+      marker.lng mappable.longitude
+      marker.infowindow "You might provide a nice description in here"
+     end
   end
 
   # GET /mappables/1
@@ -69,6 +74,6 @@ class MappablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mappable_params
-      params.require(:mappable).permit(:address)
+      params.require(:mappable).permit(:address, :longitude, :latitude)
     end
 end

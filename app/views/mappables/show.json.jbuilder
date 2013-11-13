@@ -1,1 +1,1 @@
-json.extract! @mappable, :address, :created_at, :updated_at
+json.extract! @mappable, :address, :longitude, :latitude, :created_at, :updated_at
